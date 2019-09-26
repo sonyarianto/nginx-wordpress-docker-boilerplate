@@ -1,2 +1,1 @@
-# nginx-wordpress-docker-boilerplate
-Nginx WordPress Docker Boilerplate
+# nginx-wordpress-docker-boilerplate 
