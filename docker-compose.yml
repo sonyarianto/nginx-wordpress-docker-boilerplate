@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+    nginx:
+        container_name: nginx-boilerplate
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./src:/src
+            - ./nginx-config-for-container.conf:/etc/nginx/conf.d/default.conf
+            - ./ssl_certificate/cert.cert:/ssl/cert.cert
+            - ./ssl_certificate/priv.key:/ssl/priv.key
+        networks:
+            - network-boilerplate
+    php:
+        build: ./php
+        container_name: php-boilerplate
+        volumes:
+            - ./src:/src
+        networks:
+            - network-boilerplate
+networks:
+  network-boilerplate:
