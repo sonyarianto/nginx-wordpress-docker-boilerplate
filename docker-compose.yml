@@ -8,7 +8,7 @@ services:
             - "443:443"
         volumes:
             - ./src:/src
-            - ./nginx-config-for-container.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx_config.conf:/etc/nginx/conf.d/default.conf
             - ./ssl_certificate/cert.cert:/ssl/cert.cert
             - ./ssl_certificate/priv.key:/ssl/priv.key
         networks:
